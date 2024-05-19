@@ -8,9 +8,9 @@ import (
 
 func main() {
 	cache, _ := ristretto.NewCache(&ristretto.Config{
-		NumCounters: 1e7,
-		MaxCost:     1 << 30,
-		BufferItems: 64,
+		NumCounters: 1e7,     // 約1000万のカウンター
+		MaxCost:     1 << 30, // 1GB
+		BufferItems: 64,      // バッファサイズ,
 	})
 
 	cache.Set("key", "value", 0)
